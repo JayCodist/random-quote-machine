@@ -1,6 +1,7 @@
 {
-  "name": "firstreactapp",
+  "name": "Random Quote Machine",
   "version": "0.1.0",
+  "author": "jaycodist@gmail.com",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
