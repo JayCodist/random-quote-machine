@@ -16,7 +16,6 @@ const App = props =>
 		"d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json")
 		.then(data => data.json()).then(json => 
 		{
-			applyColor(color);
 			setQuotes(json.quotes);
 			setQuote(json.quotes[Math.floor(Math.random() * 101)]);
 		}).catch(err => console.log(err));
@@ -33,8 +32,11 @@ const App = props =>
 			</div>
 			<div id="bottom">
 				<div id="socials">
-					<a id="tweet-quote" title="Tweet this quote!" href="#"><i className="fab fa-twitter"></i></a>
-					<a id="post-quote" title="Post quote on Facebook!" href="#">f</a>
+					<a id="tweet-quote" title="Tweet this quote!" href=
+					{`https://twitter.com/intent/tweet?hashtags=TheQuotesApp&related=JayCodist&text=${
+						encodeURIComponent('"' + quote.quote + "\" - " + quote.author)}`} target="_blank">
+						<i className="fab fa-twitter"></i></a>
+					<a id="post-quote" title="Post quote on Facebook!" href={`#`}>f</a>
 				</div>
 				<button id="new-quote" onClick={() => 
 				{
